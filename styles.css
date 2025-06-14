@@ -1,0 +1,331 @@
+body {
+  margin: 0; 
+  font-family: 'Outfit', sans-serif; /* Fuente principal */
+  background: linear-gradient(to right, #4e2a4d, #a04c86); /* Fondo con degradado violeta/rosado */
+  color: white; 
+}
+
+/*  ENCABEZADO (HEADER)  */
+header {
+  background-color: black;
+  padding: 15px; 
+  display: flex; 
+  justify-content: space-between; 
+  align-items: center; /* Centrado vertical */
+  position: relative; 
+}
+
+header h1 {
+  margin: 0;
+  font-size: 1.8em; /* Tamaño del texto */
+  color: #f75ed1; 
+}
+
+/* MENÚ HAMBURGUESA */
+nav {
+  display: none; /* Oculto por defecto */
+  flex-direction: column; /* Links uno abajo del otro */
+  background: rgba(17, 17, 17, 0.9); /* Fondo negro con transparencia */
+  backdrop-filter: blur(5px); 
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: 100%;
+  width: 250px;
+  padding-top: 80px;
+  z-index: 999; 
+  text-align: center;
+  transition: transform 0.3s ease-in-out;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 15px;
+  display: block;
+  transition: all 0.4s ease-in-out;
+}
+
+nav a:hover {
+  color: #ff91e3; /* Color rosado al pasar el mouse */
+  text-shadow: 0 0 8px #ff91e3;
+}
+
+/* SECCIÓN HERO (portada principal con GIF de fondo) */
+.hero {
+  position: relative;       
+  height: 600px;            
+  overflow: hidden;         
+}
+
+.hero img {
+  position: absolute;       
+  width: 100%;              
+  height: 100%;             
+  object-fit: cover;        /* Asegura que la imagen se recorte para cubrir el espacio sin deformarse */
+}
+
+.hero .hero-text {
+  position: relative;       /* Posicionamiento con mayor prioridad que la imagen */
+  display: flex;            /* Flexbox para alinear el texto */
+  justify-content: center; /* Centrado horizontal */
+  align-items: center;     /* Centrado vertical */
+  height: 100%;            /* Ocupa todo el alto de la sección hero */
+}
+
+.hero h2 {
+  color: white;             /* Texto blanco */
+  font-size: 2.5em;         
+  text-shadow: 2px 2px 5px #000; /* Sombra negra para que se lea mejor sobre la imagen */
+}
+
+/*  GALERÍA, BIOGRAFÍA Y VIDEO */
+#galeria,
+#bio,
+#video {
+  background: linear-gradient(to right, #4e2a4d, #a04c86);
+  padding: 40px 20px;
+  text-align: center;
+}
+
+#galeria h2,
+#bio h2 {
+  font-size: 2.5em;
+  color: #ffc2f4;
+  text-shadow: 0 0 8px #ff91e3, 0 0 15px #ff91e3;
+  margin-bottom: 30px;
+}
+
+#video h2 {
+  font-size: 2.5em;
+  color: #ffc2f4;
+  text-shadow: 0 0 8px #ff91e3, 0 0 15px #ff91e3;
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 40px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.gallery figure {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 200px;
+  text-align: center;
+}
+
+.gallery img {
+  width: 280px;
+  height: 390px;
+  object-fit: cover;
+  border-radius: 15px;
+  box-shadow: 0 4px 20px rgba(255, 0, 255, 0.3);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.gallery img:hover {
+  transform: scale(1.08);
+  box-shadow: 0 6px 30px rgba(255, 105, 255, 0.7);
+  filter: brightness(1.2);
+}
+
+.gallery figcaption {
+  margin-top: 15px;
+  font-size: 1.2em;
+}
+
+/*  TEXTO BIOGRAFÍA */
+#bio p {
+  font-size: 1.2em;
+  max-width: 850px;
+  margin: 0 auto 20px;
+  line-height: 1.8;
+}
+
+.about-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30px;
+  padding: 0 20px;
+}
+
+.about-text {
+  flex: 1 1 400px;
+  max-width: 600px;
+}
+
+.about-text h3 {
+  color: #f75ed1;
+  font-size: 1.6em;
+  margin-bottom: 10px;
+}
+
+.about-text p {
+  font-size: 1.1em;
+  line-height: 1.6;
+  margin-bottom: 15px;
+}
+
+.about-img {
+  flex: 1 1 300px;
+  max-width: 500px;
+  text-align: center;
+}
+
+.about-img img {
+  width: 90%;
+  border-radius: 15px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5);
+  margin: 0 auto;
+}
+
+/*  VIDEOS  */
+.video-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  margin: 40px auto;
+  max-width: 900px;
+  padding: 20px;
+}
+
+.video-container iframe,
+.video-container video,
+.video-container img {
+  width: 100%;
+  border-radius: 15px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5);
+}
+
+.video-container p {
+  text-align: center;
+  margin-top: 10px;
+  font-size: 1.1em;
+  color: #fff;
+  line-height: 1.6;
+  max-width: 700px;
+}
+
+/* ÍCONOS DE REDES QUE ESTA EN EL FOOTER */
+.social-icons a,
+.footer-social-icons a {
+  text-decoration: none;
+  margin: 0 10px;
+  display: inline-block;
+  transition: transform 0.3s ease;
+}
+
+.social-icons a i,
+.footer-social-icons a i {
+  color: #f75ed1;
+  font-size: 1.6em;
+  background-color: rgba(255, 255, 255, 0.08);
+  border-radius: 50%;
+  padding: 10px;
+  box-shadow: 0 0 12px #f75ed1, 0 0 25px #f75ed1 inset;
+  transition: transform 0.3s ease, box-shadow 0.4s, color 0.4s;
+}
+
+.social-icons a:hover i,
+.footer-social-icons a:hover i {
+  color: #ffffff;
+  box-shadow: 0 0 20px #f75ed1, 0 0 40px #f75ed1 inset;
+  transform: scale(1.2) translateY(-5px);
+}
+
+/* PIE DE PÁGINA OSEA SOLO EL FONDO Y COLOR DE LA LETRA */
+footer {
+  background-color: #000;
+  padding: 40px 20px 20px;
+  text-align: center;
+  color: white;
+  margin-top: 49px;
+  font-size: 0.9em;
+}
+
+/*  LISTAS  */
+ul, li {
+  font-family: 'Outfit', sans-serif;
+  font-size: 1.1em;
+  color: white;
+  line-height: 1.6;
+  list-style-position: inside;
+}
+
+li strong,
+li b {
+  font-weight: bold;
+}
+
+/* SECCIÓN SPOTIFY  */
+#spotify h2 {
+  font-family: 'Outfit', sans-serif;
+  font-size: 2.5em;
+  color: #ffc2f4;
+  text-shadow: 0 0 8px #ff91e3, 0 0 15px #ff91e3;
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+.spotify-embed {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 10px;
+  border: 4px solid #f75ed1; /* Borde rosado fuerte */
+  border-radius: 16px;
+  box-shadow: 0 0 20px #f75ed1;
+}
+
+/*  BOTON DE HAMBURGUESAAA  */
+#menu-toggle {
+  background: none;
+  border: none;
+  color: #f75ed1;
+  font-size: 1.8em;
+  cursor: pointer;
+  z-index: 1001;
+}
+
+/*  MENÚ ABIERTO  */
+header nav.open {
+  display: flex;
+}
+
+
+.separador-icono {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 50px 0;
+  gap: 6px; /* largo de las lineas en la cual en el medio esta el icono de estrella*/
+}
+
+.separador-icono hr {
+  flex: 1;
+  border: none;
+  height: 4px; /*grosor de las lineas divisorias */
+  background: #ff8be6;
+  opacity: 0.5;
+}
+
+.separador-icono span {
+  color: #ff8be6;
+  font-size: 30px;
+  text-shadow: 0 0 5px #ff8be6;
+}
+
+
+
+
